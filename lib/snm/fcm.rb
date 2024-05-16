@@ -25,7 +25,8 @@ module Snm
       def self.deliver data={}
         raise 'Data is missing' if data.nil?
 
-        HTTP.headers("Content-Type"=> "application/json", "Authorization"=> "Bearer #{get_access_token}").post("https://fcm.googleapis.com/v1/projects/#{Notification.configuration.project_id}/messages:send", json: data)
+        response = HTTP.headers("Content-Type"=> "application/json", "Authorization"=> "Bearer #{get_access_token}").post("https://fcm.googleapis.com/v1/projects/#{Notification.configuration.project_id}/messages:send", json: data)
+        JSON.parse(response.body)
       end
 
       def self.get_access_token
