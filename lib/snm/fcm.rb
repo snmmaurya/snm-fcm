@@ -18,13 +18,14 @@ module Snm
         @configuration ||= Configuration.new
       end
 
-      def self.config(&block)
-        @configuration = yield(configuration)
+      def self.setup(&block)
+        yield(configuration)
       end
 
       def self.deliver data={}
-        raise 'Data is missing' if not data.present?
-        HTTP.headers('Content-Type: application/json', "Authorization: Bearer #{get_access_token}").post("https://fcm.googleapis.com/v1/projects/#{Notification.configuration.project_id}/messages:send", json: data)
+        raise 'Data is missing' if data.nil?
+
+        HTTP.headers("Content-Type"=> "application/json", "Authorization"=> "Bearer #{get_access_token}").post("https://fcm.googleapis.com/v1/projects/#{Notification.configuration.project_id}/messages:send", json: data)
       end
 
       def self.get_access_token
