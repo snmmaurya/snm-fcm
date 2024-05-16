@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["snmmaurya"]
   spec.email = ["snmspace@gmail.com"]
 
-  spec.summary = "FCM V1 send notification"
-  spec.description = ""
+  spec.summary = "Ruby Library to send notification on android via Firebase Cloud Messaging API (V1)"
+  spec.description = "Ruby Library to send notification on android via Firebase Cloud Messaging API (V1)"
   spec.homepage = "https://github.com/snmmaurya/snm-fcm"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
