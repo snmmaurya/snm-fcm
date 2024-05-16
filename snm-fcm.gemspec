@@ -36,6 +36,7 @@ Gem::Specification.new do |spec|
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "http", "~> 5.2"
   spec.add_dependency "googleauth", "~> 1.11"
+  spec.add_dependency "json", "~> 2.7", ">= 2.7.2"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

@@ -14,3 +14,5 @@ gem "standard", "~> 1.3"
 gem 'http', '~> 5.2'
 
 gem 'googleauth', '~> 1.11'
+
+gem 'json', '~> 2.7', '>= 2.7.2'
