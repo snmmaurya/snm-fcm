@@ -13,7 +13,7 @@ Version 0.1.6 requires at least Ruby 3.0.0, This library dependents on googleaut
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ gem 'snm-fcm', '~> 0.1.5'
+    $ gem 'snm-fcm', '~> 0.1.8'
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
