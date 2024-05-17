@@ -1,5 +1,7 @@
 # Snm::Fcm
 
+<a href="https://badge.fury.io/rb/snm-fcm"><img src="https://badge.fury.io/rb/snm-fcm.svg" alt="Gem Version" height="18"></a>
+
 Ruby Library to send notification on android via Firebase Cloud Messaging API (V1)
 
 This library is based on Firebase Cloud Messaging API (V1) to send notification on android devices.
