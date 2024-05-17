@@ -39,7 +39,7 @@ module Snm
             scope: scope
           )
           access_token = authorizer.fetch_access_token!['access_token']
-          Notification.configuration.snm_fcm_redis.setex('access_token', 3600, access_token)
+          Notification.configuration.snm_fcm_redis.setex('access_token', 3599, access_token)
         end
         access_token
       end
