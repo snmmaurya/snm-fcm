@@ -34,10 +34,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
-  spec.add_dependency "http", "~> 5.2"
-  spec.add_dependency "googleauth", "~> 1.11"
-  spec.add_dependency "json", "~> 2.7", ">= 2.7.2"
-  spec.add_dependency "redis", "~> 5.2"
+  spec.add_dependency "http"
+  spec.add_dependency "googleauth"
+  spec.add_dependency "json"
+  spec.add_dependency "redis"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

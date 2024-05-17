@@ -1,11 +1,11 @@
 PATH
   remote: .
   specs:
-    snm-fcm (0.1.5)
-      googleauth (~> 1.11)
-      http (~> 5.2)
-      json (~> 2.7, >= 2.7.2)
-      redis (~> 5.2)
+    snm-fcm (0.1.6)
+      googleauth
+      http
+      json
+      redis
 
 GEM
   remote: https://rubygems.org/
@@ -126,11 +126,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  googleauth (~> 1.11)
-  http (~> 5.2)
-  json (~> 2.7, >= 2.7.2)
+  googleauth
+  http
+  json
   rake (~> 13.0)
-  redis (~> 5.2)
+  redis
   rspec (~> 3.0)
   snm-fcm!
   standard (~> 1.3)

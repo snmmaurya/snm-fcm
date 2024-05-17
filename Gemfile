@@ -11,10 +11,10 @@ gem "rspec", "~> 3.0"
 
 gem "standard", "~> 1.3"
 
-gem 'http', '~> 5.2'
+gem 'http'
 
-gem 'googleauth', '~> 1.11'
+gem 'googleauth'
 
-gem 'json', '~> 2.7', '>= 2.7.2'
+gem 'json'
 
-gem 'redis', '~> 5.2'
+gem 'redis'
