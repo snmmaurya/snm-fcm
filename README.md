@@ -1,34 +1,82 @@
 # Snm::Fcm
 
-TODO: Delete this and the text below, and describe your gem
+Ruby Library to send notification on android via Firebase Cloud Messaging API (V1)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/snm/fcm`. To experiment with that code, run `bin/console` for an interactive prompt.
+This library is based on Firebase Cloud Messaging API (V1) to send notification on android devices.
+
+## Requirements
+Version 0.1.6 requires at least Ruby 3.0.0, This library dependents on googleauth, redis, json and http gem.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+    $ gem 'snm-fcm', '~> 0.1.5'
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install snm-fcm
 
 ## Usage
+### Setup
+Create an initializer file for ex rails-project/config/initializers/snm_fcm.rb
+```
+Snm::Fcm::Notification.configure do |config|
+  config.credentails_file_path = 'path/to/my-fcm-e65a9915e042.json'
+  config.redis_endpoint = 'redis://localhost:6379/1'
+end
+Snm::Fcm::Notification.set_project
+```
+### Send notification
+```
+msg_data = {
+  'message'=> {
+    'token'=> 'android-device-fcm-token',
+    'notification'=>
+    {
+      'title'=> 'Lorem ipsum',
+      'body'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image'=> 'https://www.snmmaurya.com/images/me.jpg'
+    },
+    'data'=> {
+      'key1'=> 'value1',
+      'key2'=> 'value2'
+      }
+    }
+}
+respoonse = Snm::Fcm::Notification.deliver(msg_data)
 
-TODO: Write usage instructions here
+# Success response:
 
-## Development
+{"name"=>"projects/my-fcm/messages/0:1715935676674045%f570bc3bf570bc3b"}
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```
+## How to get my-fcm-e65a9915e042.json
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+1. Got go https://console.firebase.google.com/
+
+### For Android (FE)
+
+2. Create your project for ex 'my-fcm' and download google-services.json to set up your android project.
+
+### For Ruby
+3. Go to the project click on settings icon next to Project Overview top left cornor.
+
+    3.1 in the general tab you will find 'project id' copy this id and put somewhere in your system.
+    
+    3.2 Click on Cloud Messging tab -
+    
+    3.3 In side Firebase Cloud Messaging API (V1) panel.
+    
+    3.4 Click on Manage Service Accounts On the next page a service already be there click on the name of that serive name for ex 'firebase-adminsdk-4apop@my-fcm.iam.gserviceaccount.com'
+    
+    3.5 Click on advanced settings - choose 'keys' tab.
+    
+    3.6 Now create a new key type json download it (automatically downloaded) put this file somewhere in your system. this file is your my-fcm-e65a9915e042.json
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/snm-fcm. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/snm-fcm/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/snmmaurya/snm-fcm. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/snmmaurya/snm-fcm/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -36,4 +84,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Snm::Fcm project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/snm-fcm/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Snm::Fcm project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/snmmaurya/snm-fcm/blob/main/CODE_OF_CONDUCT.md).
