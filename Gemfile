@@ -16,3 +16,5 @@ gem 'http', '~> 5.2'
 gem 'googleauth', '~> 1.11'
 
 gem 'json', '~> 2.7', '>= 2.7.2'
+
+gem 'redis', '~> 5.2'
