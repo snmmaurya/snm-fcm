@@ -25,7 +25,7 @@ Snm::Fcm::Notification.configure do |config|
   config.credentails_file_path = 'path/to/my-fcm-e65a9915e042.json'
   config.redis_endpoint = 'redis://localhost:6379/1'
 end
-Snm::Fcm::Notification.set_project
+Snm::Fcm::Notification.setup
 ```
 ### Send notification
 ```
