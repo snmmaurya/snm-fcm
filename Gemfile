@@ -18,3 +18,8 @@ gem 'googleauth'
 gem 'json'
 
 gem 'redis'
+
+group :development, :test do
+  gem 'pry'
+  gem 'webmock'
+end
