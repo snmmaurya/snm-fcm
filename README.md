@@ -2,9 +2,9 @@
 
 <a href="https://badge.fury.io/rb/snm-fcm"><img src="https://badge.fury.io/rb/snm-fcm.svg" alt="Gem Version" height="18"></a>
 
-Ruby Library to send notification on android via Firebase Cloud Messaging API (V1)
+Ruby Library to send push notification on android via Firebase Cloud Messaging API (V1)
 
-This library is based on Firebase Cloud Messaging API (V1) to send notification on android devices.
+This library is based on Firebase Cloud Messaging API (V1) to send push notification on android devices.
 
 ## Requirements
 Version 0.1.8 requires at least Ruby 3.0.0, This library dependents on googleauth, redis, json and http gem.
